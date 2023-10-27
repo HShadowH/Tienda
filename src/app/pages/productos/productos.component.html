@@ -1,0 +1,22 @@
+<label>
+  <input type="checkbox" [(ngModel)]="showClotheOnly" />
+  Mostrar solo productos
+</label>
+
+<ul>
+  <div *ngFor="let cloth of ropa">
+    <li *ngIf="!showClotheOnly || (showClotheOnly && cloth.available)">
+      {{ cloth.tipo }}
+    </li>
+  </div>
+</ul>
+
+<ul>
+  <ng-container *ngFor="let cloth of ropa">
+    <li *ngIf="!showClotheOnly || (showClotheOnly && cloth.available)">
+      {{ cloth.tipo }}
+    </li>
+  </ng-container>
+</ul>
+
+  <button><label>Registro</label></button>
